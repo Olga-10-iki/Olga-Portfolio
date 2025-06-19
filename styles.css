@@ -1,0 +1,286 @@
+/* Root Colors */
+:root {
+  --warm-peach: #f7c59f;
+  --warm-beige: #f0e3d3;
+  --warm-brown: #a9746e;
+  --warm-dark-brown: #5e3a32;
+  --text-dark: #4a3c31;
+  --text-light: #fff9f2;
+}
+
+/* Reset and base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--warm-beige);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+  border: 5px solid var(--warm-beige);
+  box-shadow: 0 4px 8px rgba(169, 102, 67, 0.5);
+  margin: 0 auto 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--warm-brown);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--text-light);
+  user-select: none;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-light);
+  border-radius: 2px;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: var(--warm-peach);
+  color: var(--warm-dark-brown);
+  outline: none;
+}
+
+/* Hero Section */
+.hero {
+  background: var(--warm-peach);
+  color: var(--warm-dark-brown);
+  text-align: center;
+  padding: 5rem 1rem 4rem;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 2rem auto;
+  box-shadow: 0 8px 16px rgba(231, 179, 137, 0.3);
+}
+
+#typing {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-family: 'Georgia', serif;
+}
+
+/* Section styling */
+section {
+  max-width: 900px;
+  background: var(--warm-beige);
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(169, 102, 67, 0.15);
+  color: var(--warm-dark-brown);
+}
+
+h2 {
+  border-bottom: 3px solid var(--warm-peach);
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+}
+
+/* Two column layout */
+.two-column {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  background: var(--warm-beige);
+  flex: 1 1 48%;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(169, 102, 67, 0.2);
+  margin-bottom: 1.5rem;
+  color: var(--warm-dark-brown);
+}
+
+.card ul {
+  padding-left: 1.2rem;
+}
+
+.card ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Contact address */
+address {
+  font-style: normal;
+  line-height: 1.5;
+}
+
+address a {
+  color: var(--warm-dark-brown);
+  text-decoration: underline;
+}
+
+address a:hover,
+address a:focus {
+  color: var(--warm-peach);
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: var(--warm-peach);
+  color: var(--warm-dark-brown);
+  border: none;
+  padding: 0.8rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(169, 102, 67, 0.3);
+  transition: background-color 0.3s ease;
+  z-index: 10000;
+}
+
+#backToTop:hover,
+#backToTop:focus {
+  background-color: #f1a765;
+  outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .nav-container {
+    padding: 1rem;
+  }
+
+  /* Show hamburger and hide nav links */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--warm-brown);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  /* Stack cards */
+  .two-column {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  /* Hero text smaller */
+  #typing {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+
+  .hero {
+    max-width: 800px;
+  }
+
+  section {
+    max-width: 900px;
+  }
+}
